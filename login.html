@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,42 +7,59 @@
     <title>Login Here!</title>
     <link rel="stylesheet" href="all.css">
     <link rel="stylesheet" href="style1.css">
+    <!-- Optional Font Awesome CDN if local CSS fails -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
 </head>
 <body>
-    
-      <div class="inner">
-          <div class="photo">
-              <img src="./images/bg4.svg">
-          </div>
-          <div class="user-form">
-              <h1>User Login!</h1>
-              <form>
-                  <i class="fas fa-user"></i>
-                  <input type="text " placeholder="Enter Full Name">
-                  <i class="fas fa-envelope"></i>
-                  <input type="email" placeholder="Enter Mail ID">
-                  <i class="fas fa-lock"></i>
-                  <input type="password" placeholder="Enter Password">
+    <div class="inner">
+        <div class="photo">
+            <img src="india.png" alt="Background Image">
+        </div>
+        <div class="user-form">
+            <h1>User Login!</h1>
+            <form id="loginForm">
+                <i class="fas fa-user"></i>
+                <input type="text" name="fullname" placeholder="Enter Full Name" required>
 
-                  <div class="safety">
-                      <span>Password Strength</span>
-                      <span class="line"></span>
-                      <span class="line"></span>
-                      <span class="line"></span>
-                  </div>
-                  <div class="action-btn">
-                      <button class="btn primary">Create Account</button>
-                      <button class="btn">Sign In</button>
-                  </div>
-              </form>
-          </div>
-      </div>
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" placeholder="Enter Mail ID" required>
 
-   
-    
- <!-- Jquery library file-->
-<script src="./Js/Jquery3.5.1.min.js"></script>
-<!-------- Owl Carousel JS----------->
-<script src="./Js/owl.carousel.min.js"></script>
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" placeholder="Enter Password" required>
+
+                <div class="safety">
+                    <span>Password Strength</span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+
+                <div class="action-btn">
+                    <!--<button type="submit" class="btn primary">Create Account</button>-->
+                    <button type="button" class="btn" id="signInBtn">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- jQuery Library -->
+    <script src="Jquery3.5.1.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="owl.carousel.min.js"></script>
+
+    <!-- Custom JS for Redirect -->
+    <script>
+        // Redirect to dashboard.html on Sign In click
+        document.getElementById('signInBtn').addEventListener('click', function() {
+            // You can add form validation logic here if needed
+            window.location.href = 'index.html'; // Change this to your desired page
+        });
+
+        // Optional: Prevent form from submitting if needed
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Remove this line if you want form to submit normally
+            alert("Account creation not implemented, but form submitted!");
+        });
+    </script>
 </body>
 </html>
